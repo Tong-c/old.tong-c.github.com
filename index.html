@@ -104,7 +104,7 @@
     motion: true,
     duoshuo: {
       userId: 0,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -117,7 +117,7 @@
   <title> Hexo </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,7 +174,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -238,7 +238,7 @@
               
                 
                 <a class="post-title-link" href="/2016/08/14/Android Note One/" itemprop="url">
-                  Unbenannt
+                  未命名
                 </a>
               
             
@@ -250,8 +250,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T16:35:20+08:00" content="2016-08-14">
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-14T18:02:49+08:00" content="2016-08-14">
               2016-08-14
             </time>
           </span>
@@ -281,12 +281,12 @@
       
         
           
-            <h1 id="Android-Note-One"><a href="#Android-Note-One" class="headerlink" title="Android Note One"></a>Android Note One</h1><p>标签（空格分隔）： 未分类</p>
+            <h1 id="Android-Note-One"><a href="#Android-Note-One" class="headerlink" title="Android Note One"></a>Android Note One</h1><p>note</p>
 <hr>
-<p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders,项目地址是【<a href="https://github.com/emilsjolander/StickyListHeaders】，当然通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。" target="_blank" rel="external">https://github.com/emilsjolander/StickyListHeaders】，当然通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</a></p>
-<p>在我解决问题的过程中，我发现了一篇文章，【<a href="http://blog.csdn.net/tongcpp/article/details/40372521】，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。" target="_blank" rel="external">http://blog.csdn.net/tongcpp/article/details/40372521】，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</a></p>
-<pre><code>其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。
-</code></pre>
+<p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（<a href="https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。" target="_blank" rel="external">https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</a></p>
+<p>在我解决问题的过程中，我发现了一篇文章，<a href="http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。" target="_blank" rel="external">http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</a></p>
+<p>其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。</p>
+
           
         
       
@@ -348,7 +348,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-07-08T19:35:34+08:00" content="2016-07-08">
               2016-07-08
             </time>
@@ -450,15 +450,15 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Tong_c" />
+          <p class="site-author-name" itemprop="name">Tong_c</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -508,15 +508,15 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Tong_c</span>
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
