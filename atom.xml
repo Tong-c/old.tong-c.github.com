@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-14T10:02:49.863Z</updated>
+  <updated>2016-08-18T11:16:36.109Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,12 +17,13 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2016/08/14/Android%20Note%20One/"/>
-    <id>http://yoursite.com/2016/08/14/Android Note One/</id>
-    <published>2016-08-14T10:02:49.681Z</published>
-    <updated>2016-08-14T10:02:49.863Z</updated>
+    <link href="http://yoursite.com/2016/08/18/title-%20Android%20Note%20One/"/>
+    <id>http://yoursite.com/2016/08/18/title- Android Note One/</id>
+    <published>2016-08-18T11:16:54.052Z</published>
+    <updated>2016-08-18T11:16:36.109Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Android-Note-One&quot;&gt;&lt;a href=&quot;#Android-Note-One&quot; class=&quot;headerlink&quot; title=&quot;Android Note One&quot;&gt;&lt;/a&gt;Android Note One&lt;/h1&gt;&lt;p&gt;note&lt;/p&gt;
+    <content type="html">&lt;p&gt;#title: Android Note One&lt;/p&gt;
+&lt;p&gt;note&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（&lt;a href=&quot;https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在我解决问题的过程中，我发现了一篇文章，&lt;a href=&quot;http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&lt;/a&gt;&lt;/p&gt;
@@ -31,9 +32,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Android-Note-One&quot;&gt;&lt;a href=&quot;#Android-Note-One&quot; class=&quot;headerlink&quot; title=&quot;Android Note One&quot;&gt;&lt;/a&gt;Android Note One&lt;/h1&gt;&lt;p&gt;note&lt;/p&gt;
+      &lt;p&gt;#title: Android Note One&lt;/p&gt;
+&lt;p&gt;note&lt;/p&gt;
 &lt;hr&gt;
-
+&lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（&lt;a href=&quot;https://github.com/emilsjolan
     
     </summary>
     

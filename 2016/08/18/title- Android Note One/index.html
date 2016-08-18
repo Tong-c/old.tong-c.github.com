@@ -86,12 +86,25 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="#title: Android Note One
+note
+
+最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/18/title- Android Note One/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#title: Android Note One
+note
+
+最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己">
+<meta property="og:updated_time" content="2016-08-18T11:16:36.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#title: Android Note One
+note
+
+最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己">
 
 
 
@@ -112,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/18/title- Android Note One/"/>
 
-  <title> Hexo </title>
+  <title>  | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -135,9 +148,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,9 +248,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/18/title- Android Note One/" itemprop="url">
-                  未命名
-                </a>
               
             
           </h1>
@@ -279,25 +287,27 @@
       
 
       
-        
-          
-            <p>#title: Android Note One</p>
+        <p>#title: Android Note One</p>
 <p>note</p>
 <hr>
 <p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（<a href="https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。" target="_blank" rel="external">https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</a></p>
 <p>在我解决问题的过程中，我发现了一篇文章，<a href="http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。" target="_blank" rel="external">http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</a></p>
 <p>其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -305,121 +315,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/07/08/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-08T19:35:34+08:00" content="2016-07-08">
-              2016-07-08
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -427,6 +348,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -446,8 +371,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -490,6 +424,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -586,6 +531,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
