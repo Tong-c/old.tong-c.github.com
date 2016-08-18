@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-18T11:27:35.113Z</updated>
+  <updated>2016-08-18T11:53:43.725Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://yoursite.com/2016/08/18/tags-/"/>
     <id>http://yoursite.com/2016/08/18/tags-/</id>
     <published>2016-08-18T11:24:39.000Z</published>
-    <updated>2016-08-18T11:27:35.113Z</updated>
+    <updated>2016-08-18T11:53:43.725Z</updated>
     
-    <content type="html">&lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（&lt;a href=&quot;https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在我解决问题的过程中，我发现了一篇文章，&lt;a href=&quot;http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地址&lt;/a&gt;，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&lt;/p&gt;
+&lt;p&gt;在我解决问题的过程中，我发现了一篇&lt;a href=&quot;http://blog.csdn.net/tongcpp/article/details/40372521&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文章&lt;/a&gt;，，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&lt;/p&gt;
 &lt;p&gt;其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（&lt;a href=&quot;https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上
+      &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地
     
     </summary>
     

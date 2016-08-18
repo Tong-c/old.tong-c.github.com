@@ -281,8 +281,8 @@
       
         
           
-            <p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders[项目地址]（<a href="https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。" target="_blank" rel="external">https://github.com/emilsjolander/StickyListHeaders），通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</a></p>
-<p>在我解决问题的过程中，我发现了一篇文章，<a href="http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。" target="_blank" rel="external">http://blog.csdn.net/tongcpp/article/details/40372521，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</a></p>
+            <p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders<a href="http://github.com/emilsjolander/StickyListHeaders" target="_blank" rel="external">项目地址</a>，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</p>
+<p>在我解决问题的过程中，我发现了一篇<a href="http://blog.csdn.net/tongcpp/article/details/40372521" target="_blank" rel="external">文章</a>，，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</p>
 <p>其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。</p>
 
           
