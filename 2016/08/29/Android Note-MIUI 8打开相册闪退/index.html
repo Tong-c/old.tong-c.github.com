@@ -68,12 +68,10 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="Tong_C Note" type="application/atom+xml" />
@@ -88,19 +86,19 @@
 
 
 
-<meta name="description" content="最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders项目地址，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。
-在我解决问题的过程中，我发现了一">
+<meta name="description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
+问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Note - StickListHeaders的使用">
-<meta property="og:url" content="http://yoursite.com/2016/08/18/tags-/index.html">
+<meta property="og:title" content="Android Note - MIUI 8打开相册闪退">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/Android Note-MIUI 8打开相册闪退/index.html">
 <meta property="og:site_name" content="Tong_C Note">
-<meta property="og:description" content="最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders项目地址，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。
-在我解决问题的过程中，我发现了一">
-<meta property="og:updated_time" content="2016-08-18T11:53:43.725Z">
+<meta property="og:description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
+问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
+<meta property="og:updated_time" content="2016-08-29T11:42:21.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Note - StickListHeaders的使用">
-<meta name="twitter:description" content="最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders项目地址，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。
-在我解决问题的过程中，我发现了一">
+<meta name="twitter:title" content="Android Note - MIUI 8打开相册闪退">
+<meta name="twitter:description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
+问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
 
 
 
@@ -121,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/18/tags-/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/29/Android Note-MIUI 8打开相册闪退/"/>
 
-  <title> Android Note - StickListHeaders的使用 | Tong_C Note </title>
+  <title> Android Note - MIUI 8打开相册闪退 | Tong_C Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +241,7 @@
             
             
               
-                Android Note - StickListHeaders的使用
+                Android Note - MIUI 8打开相册闪退
               
             
           </h1>
@@ -255,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-18T19:24:39+08:00" content="2016-08-18">
-              2016-08-18
+            <time itemprop="dateCreated" datetime="2016-08-29T19:38:33+08:00" content="2016-08-29">
+              2016-08-29
             </time>
           </span>
 
@@ -283,9 +281,9 @@
       
 
       
-        <p>最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders<a href="http://github.com/emilsjolander/StickyListHeaders" target="_blank" rel="external">项目地址</a>，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。</p>
-<p>在我解决问题的过程中，我发现了一篇<a href="http://blog.csdn.net/tongcpp/article/details/40372521" target="_blank" rel="external">文章</a>，，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。</p>
-<p>其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。</p>
+        <p>到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。</p>
+<p>问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getPathByUri</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> Uri uri)</span> </span>&#123;</div><div class="line">       <span class="keyword">try</span> &#123;</div><div class="line">           <span class="keyword">return</span> getRealFilePath(context, uri);</div><div class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">           <span class="keyword">return</span> uri.getPath();</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">private</span> String <span class="title">getRealFilePath</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> Uri uri)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (<span class="keyword">null</span> == uri) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">final</span> String scheme = uri.getScheme();</div><div class="line">       String data = <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">if</span> (scheme == <span class="keyword">null</span>) data = uri.getPath();</div><div class="line">       <span class="keyword">else</span> <span class="keyword">if</span> (ContentResolver.SCHEME_FILE.equals(scheme)) &#123;</div><div class="line">           data = uri.getPath();</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ContentResolver.SCHEME_CONTENT.equals(scheme)) &#123;</div><div class="line">           Cursor cursor = context.getContentResolver().query(uri, <span class="keyword">new</span> String[]&#123;MediaStore.Images.ImageColumns.DATA&#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">           <span class="keyword">if</span> (<span class="keyword">null</span> != cursor) &#123;</div><div class="line">               <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                   <span class="keyword">int</span> index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);</div><div class="line">                   <span class="keyword">if</span> (index &gt; -<span class="number">1</span>) &#123;</div><div class="line">                       data = cursor.getString(index);</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">               cursor.close();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> data;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>[参考文章](<a href="http://www.imooc.com/article/9355" target="_blank" rel="external">http://www.imooc.com/article/9355</a>)</p>
 
       
     </div>
@@ -306,18 +304,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/08/18/tags-/" rel="next" title="Android Note - StickListHeaders的使用">
+                <i class="fa fa-chevron-left"></i> Android Note - StickListHeaders的使用
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/29/Android Note-MIUI 8打开相册闪退/" rel="prev" title="Android Note - MIUI 8打开相册闪退">
-                Android Note - MIUI 8打开相册闪退 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
