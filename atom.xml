@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-18T11:53:43.725Z</updated>
+  <updated>2016-08-29T11:11:14.320Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android Note - MIUI 8打开相册闪退</title>
+    <link href="http://yoursite.com/2016/08/29/Android-Note-MIUI-8%E6%89%93%E5%BC%80%E7%9B%B8%E5%86%8C%E9%97%AA%E9%80%80/"/>
+    <id>http://yoursite.com/2016/08/29/Android-Note-MIUI-8打开相册闪退/</id>
+    <published>2016-08-29T11:11:14.000Z</published>
+    <updated>2016-08-29T11:11:14.320Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Android Note - StickListHeaders的使用</title>
