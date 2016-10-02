@@ -89,26 +89,26 @@
 
 
 <meta name="description" content="如下图所示：
-   
+​    
 点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，
-12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permiss">
+12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Note - 多个EditText的判空操作">
 <meta property="og:url" content="http://yoursite.com/2016/10/02/Android-Note-多个EditText的判空操作/index.html">
 <meta property="og:site_name" content="Tong_C Note">
 <meta property="og:description" content="如下图所示：
-   
+​    
 点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，
-12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permiss">
-<meta property="og:image" content="http://yoursite.com/D:\仝闯\博客素材\图片\sp20161002_162759.png">
-<meta property="og:updated_time" content="2016-10-02T09:06:24.727Z">
+12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permi">
+<meta property="og:image" content="http://yoursite.com/E:\Hexo\.deploy_git\images\sp20161002_162759.png">
+<meta property="og:updated_time" content="2016-10-02T09:20:55.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Note - 多个EditText的判空操作">
 <meta name="twitter:description" content="如下图所示：
-   
+​    
 点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，
-12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permiss">
-<meta name="twitter:image" content="http://yoursite.com/D:\仝闯\博客素材\图片\sp20161002_162759.png">
+12345678910111213if (!TextUtils.isEmpty(name)) &amp;#123;       if (!TextUtils.isEmpty(card)) &amp;#123;               if (!TextUtils.isEmpty(permi">
+<meta name="twitter:image" content="http://yoursite.com/E:\Hexo\.deploy_git\images\sp20161002_162759.png">
 
 
 
@@ -292,7 +292,7 @@
 
       
         <p>如下图所示：</p>
-<p>   <img src="D:\仝闯\博客素材\图片\sp20161002_162759.png" alt="sp20161002_162759"></p>
+<p>​    <img src="E:\Hexo\.deploy_git\images\sp20161002_162759.png" alt="sp20161002_162759"></p>
 <p>点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!TextUtils.isEmpty(name)) &#123;</div><div class="line">       <span class="keyword">if</span> (!TextUtils.isEmpty(card)) &#123;</div><div class="line">               <span class="keyword">if</span> (!TextUtils.isEmpty(permission_name)) &#123;</div><div class="line">					<span class="comment">//跳转下一个页面</span></div><div class="line">                       &#125; <span class="keyword">else</span> &#123;</div><div class="line">                           ToastUtils.showToast(<span class="string">"请输入营业执照号码"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line">                       &#125;</div><div class="line">                   &#125; <span class="keyword">else</span> &#123;</div><div class="line">                       ToastUtils.showToast(<span class="string">"请输入身份证号"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line">                   &#125;</div><div class="line">               &#125; <span class="keyword">else</span> &#123;</div><div class="line">                   ToastUtils.showToast(<span class="string">"请输入法人姓名"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line"> 		&#125;</div></pre></td></tr></table></figure>
 <p>对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。</p>
