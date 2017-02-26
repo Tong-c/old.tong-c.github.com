@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
-问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
+<meta name="description" content="昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。
+计算机的基本组成一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Note - MIUI 8打开相册闪退">
-<meta property="og:url" content="http://yoursite.com/2016/08/29/Android Note-MIUI 8打开相册闪退/index.html">
+<meta property="og:title" content="浅谈计算机组成">
+<meta property="og:url" content="http://yoursite.com/2017/02/26/浅谈计算机组成/index.html">
 <meta property="og:site_name" content="Tong_C Note">
-<meta property="og:description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
-问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
-<meta property="og:updated_time" content="2016-08-29T11:42:21.689Z">
+<meta property="og:description" content="昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。
+计算机的基本组成一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设">
+<meta property="og:updated_time" content="2017-02-26T09:51:51.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Note - MIUI 8打开相册闪退">
-<meta name="twitter:description" content="到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。
-问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。12345678910111213141516171819202122232425262728public String getPathByUri(final Cont">
+<meta name="twitter:title" content="浅谈计算机组成">
+<meta name="twitter:description" content="昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。
+计算机的基本组成一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设">
 
 
 
@@ -119,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/29/Android Note-MIUI 8打开相册闪退/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/26/浅谈计算机组成/"/>
 
-  <title> Android Note - MIUI 8打开相册闪退 | Tong_C Note </title>
+  <title> 浅谈计算机组成 | Tong_C Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +241,7 @@
             
             
               
-                Android Note - MIUI 8打开相册闪退
+                浅谈计算机组成
               
             
           </h1>
@@ -253,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-29T19:38:33+08:00" content="2016-08-29">
-              2016-08-29
+            <time itemprop="dateCreated" datetime="2017-02-26T16:22:09+08:00" content="2017-02-26">
+              2017-02-26
             </time>
           </span>
 
@@ -281,9 +281,15 @@
       
 
       
-        <p>到现在可能我到觉得很奇怪，虽然解决了这个问题，同样的代码在其它的系统里可以正常运行，但在MIUI 8 上一运行就闪退，后来查看log，报了一个空指针。</p>
-<p>问题出在把Uri转为File对象的方法里，更改了这个方法，下面是我更改后的方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getPathByUri</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> Uri uri)</span> </span>&#123;</div><div class="line">       <span class="keyword">try</span> &#123;</div><div class="line">           <span class="keyword">return</span> getRealFilePath(context, uri);</div><div class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">           <span class="keyword">return</span> uri.getPath();</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">private</span> String <span class="title">getRealFilePath</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> Uri uri)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (<span class="keyword">null</span> == uri) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">final</span> String scheme = uri.getScheme();</div><div class="line">       String data = <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">if</span> (scheme == <span class="keyword">null</span>) data = uri.getPath();</div><div class="line">       <span class="keyword">else</span> <span class="keyword">if</span> (ContentResolver.SCHEME_FILE.equals(scheme)) &#123;</div><div class="line">           data = uri.getPath();</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ContentResolver.SCHEME_CONTENT.equals(scheme)) &#123;</div><div class="line">           Cursor cursor = context.getContentResolver().query(uri, <span class="keyword">new</span> String[]&#123;MediaStore.Images.ImageColumns.DATA&#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">           <span class="keyword">if</span> (<span class="keyword">null</span> != cursor) &#123;</div><div class="line">               <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                   <span class="keyword">int</span> index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);</div><div class="line">                   <span class="keyword">if</span> (index &gt; -<span class="number">1</span>) &#123;</div><div class="line">                       data = cursor.getString(index);</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">               cursor.close();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> data;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>[参考文章](<a href="http://www.imooc.com/article/9355" target="_blank" rel="external">http://www.imooc.com/article/9355</a>)</p>
+        <p>昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。</p>
+<h2 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h2><p>一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设备（鼠标，键盘）。</p>
+<p>当然这五个部分绝不是孤立的，它们是有联系的，我们都知道鼠标和键盘得插到USB口里面。如果你拆开电脑主机，你会看到一些插槽，一些密密麻麻的电路，而就是物理的联系，才得以传递我们的数据。我们输入数据，我们在word里面打字，电脑会输出数据，我们在显示器上就可以看到我们的输入。但这是一个怎样的联系呢？</p>
+<p>CPU通过IO桥与内存建立联系，而IO桥又与IO总线连在一块，IO总线上连接的东西就很多了，它上面有我们的输入设备（鼠标，键盘），也有输出设备（显示器），还有存储器（硬盘），而这就是它们的联系，有了这样的联系，就可以传递数据，处理数据。</p>
+<h2 id="计算机可以做些什么事呢，它又是怎样做的呢？"><a href="#计算机可以做些什么事呢，它又是怎样做的呢？" class="headerlink" title="计算机可以做些什么事呢，它又是怎样做的呢？"></a>计算机可以做些什么事呢，它又是怎样做的呢？</h2><p>可以做些什么事呢，想一想我们与电脑相处的每一天，我们聊天（qq，微信），听歌（酷狗），浏览网页（搜狗浏览器），处理文档（word）等，有没有发现，电脑可以做很多事情，但全都基于软件。可软件又是什么呢，你可能立刻想到那一行行的代码，没错，就是它们，可这一行行的代码又如何成为我们所谓的软件呢？</p>
+<p>首先明确一点，计算机只认识0和1，2都不认识，其它的数字、字母、图片、音乐，它都不认识。</p>
+<p>程序员写好的一行行代码，就是源代码，计算机是不认识的，它不懂的。需要经过编译器，把这些源代码变成本地代码，本地代码是什么呢，就是安装包，就是那些以.exe作为后缀的文件，而这时候计算机就认得它了。</p>
+<p>安装包现在就在你的硬盘里，你双击打开它，这些本地代码就会经过IO总线，IO桥到达内存里面，可这又是由谁控制的呢，别忘了操作系统，然后程序开始运行，在这个过程里面，数据和指令就经由操作系统被CPU处理，然后再得以输出。</p>
+<p>才觉得脑袋里的东西很不系统，只是一些自己很零散的认知了。</p>
 
       
     </div>
@@ -304,28 +310,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/18/tags-/" rel="next" title="Android Note - StickListHeaders的使用">
-                <i class="fa fa-chevron-left"></i> Android Note - StickListHeaders的使用
+              <a href="/2016/10/02/Android-Note-多个EditText的判空操作/" rel="next" title="Android Note - 多个EditText的判空操作">
+                <i class="fa fa-chevron-left"></i> Android Note - 多个EditText的判空操作
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/02/JavaWeb Note- HTTP请求参数获取及乱码的解决/" rel="prev" title="JavaWeb Note - HTTP请求参数获取及乱码的解决">
-                JavaWeb Note - HTTP请求参数获取及乱码的解决 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,7 +435,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机的基本组成"><span class="nav-number">1.</span> <span class="nav-text">计算机的基本组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机可以做些什么事呢，它又是怎样做的呢？"><span class="nav-number">2.</span> <span class="nav-text">计算机可以做些什么事呢，它又是怎样做的呢？</span></a></li></ol></div>
             
           </div>
         </section>

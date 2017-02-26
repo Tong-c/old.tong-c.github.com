@@ -237,8 +237,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/02/JavaWeb Note- GET请求参数获取乱码/" itemprop="url">
-                  JavaWeb Note - GET请求参数中文的获取乱码
+                <a class="post-title-link" href="/2017/02/26/浅谈计算机组成/" itemprop="url">
+                  浅谈计算机组成
                 </a>
               
             
@@ -251,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-02T16:14:02+08:00" content="2016-10-02">
-              2016-10-02
+            <time itemprop="dateCreated" datetime="2017-02-26T16:22:09+08:00" content="2017-02-26">
+              2017-02-26
             </time>
           </span>
 
@@ -281,13 +281,15 @@
       
         
           
-            <p>在servlet中，获取GET请求携带的参数有两种方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;password=123456”</span></div><div class="line">String para = request.getQueryString();</div><div class="line"><span class="comment">//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”</span></div><div class="line">String para = request.getParamter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure>
-<p>解决GET请求参数中文乱码的方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//必须手动解码</span></div><div class="line">String paraRight = <span class="keyword">new</span> String(para.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>);</div></pre></td></tr></table></figure>
-<p>必须说明的是，手动解码的方法对于上述获取GET请求参数的第一种方法无效，只对第二种方法有效。</p>
-<p>我的疑问就是，两个字符串，一个为纯中文，一个为中文，英文，符号混合，为什么同样的解码方法却得到不同的结果？</p>
-<p>想了下，我觉得原因是这样，第一种方法，获取的参数自动添加了参数名称，而这个参数名称的编码可能跟用户填写的参数值的编码不同。而第二种方法没有这个问题，所以解码方法对于二者有差异。</p>
+            <p>昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。</p>
+<h2 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h2><p>一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设备（鼠标，键盘）。</p>
+<p>当然这五个部分绝不是孤立的，它们是有联系的，我们都知道鼠标和键盘得插到USB口里面。如果你拆开电脑主机，你会看到一些插槽，一些密密麻麻的电路，而就是物理的联系，才得以传递我们的数据。我们输入数据，我们在word里面打字，电脑会输出数据，我们在显示器上就可以看到我们的输入。但这是一个怎样的联系呢？</p>
+<p>CPU通过IO桥与内存建立联系，而IO桥又与IO总线连在一块，IO总线上连接的东西就很多了，它上面有我们的输入设备（鼠标，键盘），也有输出设备（显示器），还有存储器（硬盘），而这就是它们的联系，有了这样的联系，就可以传递数据，处理数据。</p>
+<h2 id="计算机可以做些什么事呢，它又是怎样做的呢？"><a href="#计算机可以做些什么事呢，它又是怎样做的呢？" class="headerlink" title="计算机可以做些什么事呢，它又是怎样做的呢？"></a>计算机可以做些什么事呢，它又是怎样做的呢？</h2><p>可以做些什么事呢，想一想我们与电脑相处的每一天，我们聊天（qq，微信），听歌（酷狗），浏览网页（搜狗浏览器），处理文档（word）等，有没有发现，电脑可以做很多事情，但全都基于软件。可软件又是什么呢，你可能立刻想到那一行行的代码，没错，就是它们，可这一行行的代码又如何成为我们所谓的软件呢？</p>
+<p>首先明确一点，计算机只认识0和1，2都不认识，其它的数字、字母、图片、音乐，它都不认识。</p>
+<p>程序员写好的一行行代码，就是源代码，计算机是不认识的，它不懂的。需要经过编译器，把这些源代码变成本地代码，本地代码是什么呢，就是安装包，就是那些以.exe作为后缀的文件，而这时候计算机就认得它了。</p>
+<p>安装包现在就在你的硬盘里，你双击打开它，这些本地代码就会经过IO总线，IO桥到达内存里面，可这又是由谁控制的呢，别忘了操作系统，然后程序开始运行，在这个过程里面，数据和指令就经由操作系统被CPU处理，然后再得以输出。</p>
+<p>才觉得脑袋里的东西很不系统，只是一些自己很零散的认知了。</p>
 
           
         
@@ -388,6 +390,114 @@
 <p>对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">           <span class="keyword">if</span> (TextUtils.isEmpty(name)) &#123;</div><div class="line">                ToastUtils.showToast(<span class="string">"请输入法人姓名"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TextUtils.isEmpty(card)) &#123;</div><div class="line">                ToastUtils.showToast(<span class="string">"请输入身份证号"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TextUtils.isEmpty(permission_name)) &#123;</div><div class="line">                ToastUtils.showToast(<span class="string">"请输入营业执照号码"</span>, ImportantActivity.<span class="keyword">this</span>);</div><div class="line">            &#125; <span class="keyword">else</span>&#123;</div><div class="line"><span class="comment">//跳转下一个页面</span></div><div class="line">            &#125;</div></pre></td></tr></table></figure>
 <p>这样的代码看起来就清晰了不少，学习java的时候，对于流程控制语句，我真是觉得我用的太死了，可能一直以来，在我的脑袋里的想法就是，我把代码一行一行的敲下来，我多动手，我勤奋，可是那也只是我懒得动脑而已，那我真真是想成为一个码农吧，那我又何需走上编程这条路呢，一个懒得动脑的人。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/02/JavaWeb Note- HTTP请求参数获取及乱码的解决/" itemprop="url">
+                  JavaWeb Note - HTTP请求参数获取及乱码的解决
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-02T16:14:02+08:00" content="2016-10-02">
+              2016-10-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在servlet中，获取GET请求携带的参数有两种方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;password=123456”</span></div><div class="line">String para = request.getQueryString();</div><div class="line"><span class="comment">//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”</span></div><div class="line">String para = request.getParamter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure>
+<p>解决GET请求参数中文乱码的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//必须手动解码</span></div><div class="line">String paraRight = <span class="keyword">new</span> String(para.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>);</div></pre></td></tr></table></figure>
+<p>必须说明的是，手动解码的方法对于上述获取GET请求参数的第一种方法无效，只对第二种方法有效。</p>
+<p>我的疑问就是，两个字符串，一个为纯中文，一个为中文，英文，符号混合，为什么同样的解码方法却得到不同的结果？</p>
+<p>想了下，我觉得原因是这样，第一种方法，获取的参数自动添加了参数名称，而这个参数名称的编码可能跟用户填写的参数值的编码不同。而第二种方法没有这个问题，所以解码方法对于二者有差异。</p>
+<p>附：</p>
+<p>post请求参数的获取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//再次强调，这个方法对于GET请求同样适用</span></div><div class="line">String para = request.getParamter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure>
+<p>解决POST请求参数中文乱码的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//解决办法相当easy,而且此方法只对POST请求参数有效</span></div><div class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</div></pre></td></tr></table></figure>
+<p>My Eclipse 快捷键：</p>
+<p>​    多行游标：Alt + Shift + A 再按退出</p>
+<p>​    替换：Ctrl + F,需要说明有正则匹配选项</p>
 
           
         
@@ -608,6 +718,110 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/18/JavaWeb Note-判空/" itemprop="url">
+                  JavaWeb Note - 判空
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-18T19:24:39+08:00" content="2016-08-18">
+              2016-08-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有这样一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//从请求头中拿出所有cookie信息</span></div><div class="line">Cookie[] cookies = request.getCookies();</div></pre></td></tr></table></figure>
+<p>查看API文档对该方法的说明，</p>
+<p>Returns an array containing all of the Cookie objects the client sent with this request. This method returns null if no cookies were sent.</p>
+<p>返回值是一个Cookie对象数组，为了进行接下来的操作呢，我需要判断cookies是否为空。可我竟然不知道怎么办了，我不会判空操作！可是代码很简单的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</div><div class="line">  	<span class="comment">//不为空</span></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  	<span class="comment">//为空</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>附：</p>
+<p>sublime text 3 快捷键：</p>
+<p>​    打开命令模式：ctrl + shift + p </p>
+<p>Java SE api:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数组转集合</span></div><div class="line">List&lt;&gt; list = Arrays.asList(<span class="string">"数组"</span>);</div><div class="line"><span class="comment">//更高级点的应用</span></div><div class="line">List&lt;String&gt; stooges = Arrays.asList(<span class="string">"Larry"</span>, <span class="string">"Moe"</span>, <span class="string">"Curly"</span>);</div><div class="line"></div><div class="line"><span class="comment">//集合转数组</span></div><div class="line">Object[] array = Collections.toArray(<span class="string">"集合"</span>);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -649,7 +863,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -703,7 +917,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

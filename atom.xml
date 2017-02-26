@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-15T12:39:28.815Z</updated>
+  <updated>2017-02-26T09:51:51.535Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,25 +16,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaWeb Note - GET请求参数中文的获取乱码</title>
-    <link href="http://yoursite.com/2016/10/02/JavaWeb%20Note-%20GET%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96%E4%B9%B1%E7%A0%81/"/>
-    <id>http://yoursite.com/2016/10/02/JavaWeb Note- GET请求参数获取乱码/</id>
-    <published>2016-10-02T08:14:02.000Z</published>
-    <updated>2016-11-15T12:39:28.815Z</updated>
+    <title>浅谈计算机组成</title>
+    <link href="http://yoursite.com/2017/02/26/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
+    <id>http://yoursite.com/2017/02/26/浅谈计算机组成/</id>
+    <published>2017-02-26T08:22:09.000Z</published>
+    <updated>2017-02-26T09:51:51.535Z</updated>
     
-    <content type="html">&lt;p&gt;在servlet中，获取GET请求携带的参数有两种方法。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;amp;password=123456”&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String para = request.getQueryString();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String para = request.getParamter(&lt;span class=&quot;string&quot;&gt;&quot;username&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;解决GET请求参数中文乱码的方法。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//必须手动解码&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String paraRight = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(para.getBytes(&lt;span class=&quot;string&quot;&gt;&quot;iso-8859-1&quot;&lt;/span&gt;),&lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;必须说明的是，手动解码的方法对于上述获取GET请求参数的第一种方法无效，只对第二种方法有效。&lt;/p&gt;
-&lt;p&gt;我的疑问就是，两个字符串，一个为纯中文，一个为中文，英文，符号混合，为什么同样的解码方法却得到不同的结果？&lt;/p&gt;
-&lt;p&gt;想了下，我觉得原因是这样，第一种方法，获取的参数自动添加了参数名称，而这个参数名称的编码可能跟用户填写的参数值的编码不同。而第二种方法没有这个问题，所以解码方法对于二者有差异。&lt;/p&gt;
+    <content type="html">&lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。&lt;/p&gt;
+&lt;h2 id=&quot;计算机的基本组成&quot;&gt;&lt;a href=&quot;#计算机的基本组成&quot; class=&quot;headerlink&quot; title=&quot;计算机的基本组成&quot;&gt;&lt;/a&gt;计算机的基本组成&lt;/h2&gt;&lt;p&gt;一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设备（鼠标，键盘）。&lt;/p&gt;
+&lt;p&gt;当然这五个部分绝不是孤立的，它们是有联系的，我们都知道鼠标和键盘得插到USB口里面。如果你拆开电脑主机，你会看到一些插槽，一些密密麻麻的电路，而就是物理的联系，才得以传递我们的数据。我们输入数据，我们在word里面打字，电脑会输出数据，我们在显示器上就可以看到我们的输入。但这是一个怎样的联系呢？&lt;/p&gt;
+&lt;p&gt;CPU通过IO桥与内存建立联系，而IO桥又与IO总线连在一块，IO总线上连接的东西就很多了，它上面有我们的输入设备（鼠标，键盘），也有输出设备（显示器），还有存储器（硬盘），而这就是它们的联系，有了这样的联系，就可以传递数据，处理数据。&lt;/p&gt;
+&lt;h2 id=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;a href=&quot;#计算机可以做些什么事呢，它又是怎样做的呢？&quot; class=&quot;headerlink&quot; title=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;/a&gt;计算机可以做些什么事呢，它又是怎样做的呢？&lt;/h2&gt;&lt;p&gt;可以做些什么事呢，想一想我们与电脑相处的每一天，我们聊天（qq，微信），听歌（酷狗），浏览网页（搜狗浏览器），处理文档（word）等，有没有发现，电脑可以做很多事情，但全都基于软件。可软件又是什么呢，你可能立刻想到那一行行的代码，没错，就是它们，可这一行行的代码又如何成为我们所谓的软件呢？&lt;/p&gt;
+&lt;p&gt;首先明确一点，计算机只认识0和1，2都不认识，其它的数字、字母、图片、音乐，它都不认识。&lt;/p&gt;
+&lt;p&gt;程序员写好的一行行代码，就是源代码，计算机是不认识的，它不懂的。需要经过编译器，把这些源代码变成本地代码，本地代码是什么呢，就是安装包，就是那些以.exe作为后缀的文件，而这时候计算机就认得它了。&lt;/p&gt;
+&lt;p&gt;安装包现在就在你的硬盘里，你双击打开它，这些本地代码就会经过IO总线，IO桥到达内存里面，可这又是由谁控制的呢，别忘了操作系统，然后程序开始运行，在这个过程里面，数据和指令就经由操作系统被CPU处理，然后再得以输出。&lt;/p&gt;
+&lt;p&gt;才觉得脑袋里的东西很不系统，只是一些自己很零散的认知了。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;在servlet中，获取GET请求携带的参数有两种方法。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
+      &lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很
     
     </summary>
     
@@ -62,6 +63,40 @@
       &lt;p&gt;如下图所示：&lt;/p&gt;
 &lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaWeb Note - HTTP请求参数获取及乱码的解决</title>
+    <link href="http://yoursite.com/2016/10/02/JavaWeb%20Note-%20HTTP%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96%E5%8F%8A%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2016/10/02/JavaWeb Note- HTTP请求参数获取及乱码的解决/</id>
+    <published>2016-10-02T08:14:02.000Z</published>
+    <updated>2016-11-20T08:40:26.536Z</updated>
+    
+    <content type="html">&lt;p&gt;在servlet中，获取GET请求携带的参数有两种方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;amp;password=123456”&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String para = request.getQueryString();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String para = request.getParamter(&lt;span class=&quot;string&quot;&gt;&quot;username&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解决GET请求参数中文乱码的方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//必须手动解码&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String paraRight = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(para.getBytes(&lt;span class=&quot;string&quot;&gt;&quot;iso-8859-1&quot;&lt;/span&gt;),&lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;必须说明的是，手动解码的方法对于上述获取GET请求参数的第一种方法无效，只对第二种方法有效。&lt;/p&gt;
+&lt;p&gt;我的疑问就是，两个字符串，一个为纯中文，一个为中文，英文，符号混合，为什么同样的解码方法却得到不同的结果？&lt;/p&gt;
+&lt;p&gt;想了下，我觉得原因是这样，第一种方法，获取的参数自动添加了参数名称，而这个参数名称的编码可能跟用户填写的参数值的编码不同。而第二种方法没有这个问题，所以解码方法对于二者有差异。&lt;/p&gt;
+&lt;p&gt;附：&lt;/p&gt;
+&lt;p&gt;post请求参数的获取&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//再次强调，这个方法对于GET请求同样适用&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String para = request.getParamter(&lt;span class=&quot;string&quot;&gt;&quot;username&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解决POST请求参数中文乱码的方法&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//解决办法相当easy,而且此方法只对POST请求参数有效&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;request.setCharacterEncoding(&lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;My Eclipse 快捷键：&lt;/p&gt;
+&lt;p&gt;​    多行游标：Alt + Shift + A 再按退出&lt;/p&gt;
+&lt;p&gt;​    替换：Ctrl + F,需要说明有正则匹配选项&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在servlet中，获取GET请求携带的参数有两种方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
     
     </summary>
     
@@ -107,6 +142,36 @@
     <summary type="html">
     
       &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaWeb Note - 判空</title>
+    <link href="http://yoursite.com/2016/08/18/JavaWeb%20Note-%E5%88%A4%E7%A9%BA/"/>
+    <id>http://yoursite.com/2016/08/18/JavaWeb Note-判空/</id>
+    <published>2016-08-18T11:24:39.000Z</published>
+    <updated>2016-11-18T07:52:19.541Z</updated>
+    
+    <content type="html">&lt;p&gt;有这样一个方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//从请求头中拿出所有cookie信息&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Cookie[] cookies = request.getCookies();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看API文档对该方法的说明，&lt;/p&gt;
+&lt;p&gt;Returns an array containing all of the Cookie objects the client sent with this request. This method returns null if no cookies were sent.&lt;/p&gt;
+&lt;p&gt;返回值是一个Cookie对象数组，为了进行接下来的操作呢，我需要判断cookies是否为空。可我竟然不知道怎么办了，我不会判空操作！可是代码很简单的：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(cookies != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	&lt;span class=&quot;comment&quot;&gt;//不为空&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	&lt;span class=&quot;comment&quot;&gt;//为空&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;附：&lt;/p&gt;
+&lt;p&gt;sublime text 3 快捷键：&lt;/p&gt;
+&lt;p&gt;​    打开命令模式：ctrl + shift + p &lt;/p&gt;
+&lt;p&gt;Java SE api:&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//数组转集合&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;&amp;gt; list = Arrays.asList(&lt;span class=&quot;string&quot;&gt;&quot;数组&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//更高级点的应用&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;String&amp;gt; stooges = Arrays.asList(&lt;span class=&quot;string&quot;&gt;&quot;Larry&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Moe&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Curly&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//集合转数组&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Object[] array = Collections.toArray(&lt;span class=&quot;string&quot;&gt;&quot;集合&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有这样一个方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/
     
     </summary>
     
