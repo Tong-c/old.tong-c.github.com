@@ -86,19 +86,22 @@
 
 
 
-<meta name="description" content="在servlet中，获取GET请求携带的参数有两种方法。
-1234//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;amp;password=123456”String para = request.getQueryString();//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”String para = reque">
+<meta name="description" content="hibernate的使用版本为hibernate3.
+1234//hibernate进行查询，离不开session对象。SessionFactory sf = new Configuration().configure().buildSessionFactory();Session session = sf.openSession();session.beginTransaction();
+HQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb Note - HTTP请求参数获取及乱码的解决">
-<meta property="og:url" content="http://yoursite.com/2016/10/02/JavaWeb Note- HTTP请求参数获取及乱码的解决/index.html">
+<meta property="og:title" content="hibernate 3-HQL查询概述">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/hibernate-3-HQL查询概述/index.html">
 <meta property="og:site_name" content="Tong_C Note">
-<meta property="og:description" content="在servlet中，获取GET请求携带的参数有两种方法。
-1234//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;amp;password=123456”String para = request.getQueryString();//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”String para = reque">
-<meta property="og:updated_time" content="2016-11-20T08:40:26.536Z">
+<meta property="og:description" content="hibernate的使用版本为hibernate3.
+1234//hibernate进行查询，离不开session对象。SessionFactory sf = new Configuration().configure().buildSessionFactory();Session session = sf.openSession();session.beginTransaction();
+HQL">
+<meta property="og:updated_time" content="2017-03-05T08:40:19.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb Note - HTTP请求参数获取及乱码的解决">
-<meta name="twitter:description" content="在servlet中，获取GET请求携带的参数有两种方法。
-1234//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;amp;password=123456”String para = request.getQueryString();//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”String para = reque">
+<meta name="twitter:title" content="hibernate 3-HQL查询概述">
+<meta name="twitter:description" content="hibernate的使用版本为hibernate3.
+1234//hibernate进行查询，离不开session对象。SessionFactory sf = new Configuration().configure().buildSessionFactory();Session session = sf.openSession();session.beginTransaction();
+HQL">
 
 
 
@@ -119,9 +122,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/02/JavaWeb Note- HTTP请求参数获取及乱码的解决/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/05/hibernate-3-HQL查询概述/"/>
 
-  <title> JavaWeb Note - HTTP请求参数获取及乱码的解决 | Tong_C Note </title>
+  <title> hibernate 3-HQL查询概述 | Tong_C Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +244,7 @@
             
             
               
-                JavaWeb Note - HTTP请求参数获取及乱码的解决
+                hibernate 3-HQL查询概述
               
             
           </h1>
@@ -253,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-02T16:14:02+08:00" content="2016-10-02">
-              2016-10-02
+            <time itemprop="dateCreated" datetime="2017-03-05T14:00:43+08:00" content="2017-03-05">
+              2017-03-05
             </time>
           </span>
 
@@ -281,21 +284,12 @@
       
 
       
-        <p>在servlet中，获取GET请求携带的参数有两种方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方法,此方法不常用，并且获取的参数使用起来非常麻烦，获取结果如“username=张三&amp;password=123456”</span></div><div class="line">String para = request.getQueryString();</div><div class="line"><span class="comment">//第二种方法，此方法与POST请求获取参数的方法一致，常用，获取结果如“张三”</span></div><div class="line">String para = request.getParamter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure>
-<p>解决GET请求参数中文乱码的方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//必须手动解码</span></div><div class="line">String paraRight = <span class="keyword">new</span> String(para.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>);</div></pre></td></tr></table></figure>
-<p>必须说明的是，手动解码的方法对于上述获取GET请求参数的第一种方法无效，只对第二种方法有效。</p>
-<p>我的疑问就是，两个字符串，一个为纯中文，一个为中文，英文，符号混合，为什么同样的解码方法却得到不同的结果？</p>
-<p>想了下，我觉得原因是这样，第一种方法，获取的参数自动添加了参数名称，而这个参数名称的编码可能跟用户填写的参数值的编码不同。而第二种方法没有这个问题，所以解码方法对于二者有差异。</p>
-<p>附：</p>
-<p>post请求参数的获取</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//再次强调，这个方法对于GET请求同样适用</span></div><div class="line">String para = request.getParamter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure>
-<p>解决POST请求参数中文乱码的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//解决办法相当easy,而且此方法只对POST请求参数有效</span></div><div class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</div></pre></td></tr></table></figure>
-<p>My Eclipse 快捷键：</p>
-<p>​    多行游标：Alt + Shift + A 再按退出</p>
-<p>​    替换：Ctrl + F,需要说明有正则匹配选项</p>
+        <p><strong>hibernate的使用版本为hibernate3.</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//hibernate进行查询，离不开session对象。</span></div><div class="line">SessionFactory sf = <span class="keyword">new</span> Configuration().configure().buildSessionFactory();</div><div class="line">Session session = sf.openSession();</div><div class="line">session.beginTransaction();</div></pre></td></tr></table></figure>
+<p>HQL查询，Hibernate Query Language，表面看上去语法与SQL非常相似，HQL为完全面向对象的查询语言</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//最简单的查询语句，可以看到，from后面所跟得是数据表所映射的类名，而不是数据表名</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept"</span>);</div></pre></td></tr></table></figure>
+<p>有一点值得注意，除了Java类与属相名称之外，查询语句对大小写并不敏感。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用HQL查询，建议在配置文件中设置auto-import="true",如果是false的话，就要使用全限定类名</span></div><div class="line"><span class="comment">//查询全部</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept"</span>);</div><div class="line"><span class="comment">//查询全部的第二种写法</span></div><div class="line">Query q = session.createQuery(<span class="string">"select d from Dept d"</span>);</div><div class="line"><span class="comment">//查询指定的列，返回对象数据Object[]</span></div><div class="line">Query q = session.createQuery(<span class="string">"select d.deptId,d.deptName from Dept d"</span>);</div><div class="line"><span class="comment">//查询指定的列，自动封装为对象</span></div><div class="line">Query q = session.createQuery(<span class="string">"select new Dept(d.deptId,d.deptName) from Dept d"</span>);</div><div class="line"></div><div class="line"><span class="comment">//条件查询</span></div><div class="line"><span class="comment">//条件查询，占位符</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d where deptName=?"</span>);</div><div class="line">q.setParameter(<span class="number">0</span>,<span class="string">"技术部"</span>);</div><div class="line"><span class="comment">//条件查询，命名参数</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d where deptId=:myId or deptName=:myName"</span>);</div><div class="line">q.setParameter(<span class="string">"myId"</span>,<span class="number">12</span>);</div><div class="line">q.setParameter(<span class="string">"myName"</span>,<span class="string">"张三"</span>);</div><div class="line"></div><div class="line"><span class="comment">//模糊查询</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d where name like ?"</span>);</div><div class="line">q.setParameter(<span class="number">0</span>,<span class="string">"%部%"</span>);</div><div class="line"></div><div class="line"><span class="comment">//聚合函数统计</span></div><div class="line">Query q = session.createQuery(<span class="string">"select count(*) from Dept"</span>);</div><div class="line">q.uniqueResult();<span class="comment">//拿到统计结果</span></div><div class="line"></div><div class="line"><span class="comment">//连接查询，映射已经配置好了关系，关联的时候，直接写对象的属性即可</span></div><div class="line"><span class="comment">//内连接</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d inner join d.emps"</span>);</div><div class="line"><span class="comment">//左外连接</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d left join d.emps"</span>);</div><div class="line"><span class="comment">//右外连接</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Employee e right join d.emps"</span>);</div><div class="line">  </div><div class="line"><span class="comment">//迫切连接</span></div><div class="line"><span class="comment">//迫切内连接，使用fetch会把右表的数据填充到左表中</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d inner join fetch d.emps"</span>);</div><div class="line"><span class="comment">//迫切左外连接</span></div><div class="line">Query q = session.createQuery(<span class="string">"from Dept d left join fetch d.emps"</span>);</div><div class="line"></div><div class="line"></div><div class="line">session.getTransaction().commit();</div><div class="line">session.close();</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -321,17 +315,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/02/Android-Note-多个EditText的判空操作/" rel="next" title="Android Note - 多个EditText的判空操作">
-                <i class="fa fa-chevron-left"></i> Android Note - 多个EditText的判空操作
+              <a href="/2017/02/26/浅谈计算机组成/" rel="next" title="浅谈计算机组成">
+                <i class="fa fa-chevron-left"></i> 浅谈计算机组成
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/26/浅谈计算机组成/" rel="prev" title="浅谈计算机组成">
-                浅谈计算机组成 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

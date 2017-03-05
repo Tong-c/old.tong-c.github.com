@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/03/05/hibernate-3-HQL%E6%9F%A5%E8%AF%A2%E6%A6%82%E8%BF%B0/</loc>
+    
+    <lastmod>2017-03-05T08:40:19.193Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/02/26/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/</loc>
     
     <lastmod>2017-02-26T09:51:51.535Z</lastmod>

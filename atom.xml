@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-26T09:51:51.535Z</updated>
+  <updated>2017-03-05T08:40:19.193Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hibernate 3-HQL查询概述</title>
+    <link href="http://yoursite.com/2017/03/05/hibernate-3-HQL%E6%9F%A5%E8%AF%A2%E6%A6%82%E8%BF%B0/"/>
+    <id>http://yoursite.com/2017/03/05/hibernate-3-HQL查询概述/</id>
+    <published>2017-03-05T06:00:43.000Z</published>
+    <updated>2017-03-05T08:40:19.193Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;hibernate的使用版本为hibernate3.&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//hibernate进行查询，离不开session对象。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SessionFactory sf = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Configuration().configure().buildSessionFactory();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Session session = sf.openSession();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;session.beginTransaction();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;HQL查询，Hibernate Query Language，表面看上去语法与SQL非常相似，HQL为完全面向对象的查询语言&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//最简单的查询语句，可以看到，from后面所跟得是数据表所映射的类名，而不是数据表名&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;有一点值得注意，除了Java类与属相名称之外，查询语句对大小写并不敏感。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用HQL查询，建议在配置文件中设置auto-import=&quot;true&quot;,如果是false的话，就要使用全限定类名&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//查询全部&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//查询全部的第二种写法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;select d from Dept d&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//查询指定的列，返回对象数据Object[]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;select d.deptId,d.deptName from Dept d&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//查询指定的列，自动封装为对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;select new Dept(d.deptId,d.deptName) from Dept d&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//条件查询&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//条件查询，占位符&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d where deptName=?&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;q.setParameter(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;技术部&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//条件查询，命名参数&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d where deptId=:myId or deptName=:myName&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;q.setParameter(&lt;span class=&quot;string&quot;&gt;&quot;myId&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;q.setParameter(&lt;span class=&quot;string&quot;&gt;&quot;myName&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;张三&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//模糊查询&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d where name like ?&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;q.setParameter(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;%部%&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//聚合函数统计&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;select count(*) from Dept&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;q.uniqueResult();&lt;span class=&quot;comment&quot;&gt;//拿到统计结果&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//连接查询，映射已经配置好了关系，关联的时候，直接写对象的属性即可&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//内连接&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d inner join d.emps&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//左外连接&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d left join d.emps&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//右外连接&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Employee e right join d.emps&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//迫切连接&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//迫切内连接，使用fetch会把右表的数据填充到左表中&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d inner join fetch d.emps&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//迫切左外连接&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query q = session.createQuery(&lt;span class=&quot;string&quot;&gt;&quot;from Dept d left join fetch d.emps&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;session.getTransaction().commit();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;session.close();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;hibernate的使用版本为hibernate3.&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/di
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>浅谈计算机组成</title>
@@ -36,33 +61,6 @@
     <summary type="html">
     
       &lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Android Note - 多个EditText的判空操作</title>
-    <link href="http://yoursite.com/2016/10/02/Android-Note-%E5%A4%9A%E4%B8%AAEditText%E7%9A%84%E5%88%A4%E7%A9%BA%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2016/10/02/Android-Note-多个EditText的判空操作/</id>
-    <published>2016-10-02T08:14:02.000Z</published>
-    <updated>2016-11-15T12:03:12.889Z</updated>
-    
-    <content type="html">&lt;p&gt;如下图所示：&lt;/p&gt;
-&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                           ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 		&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;           &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这样的代码看起来就清晰了不少，学习java的时候，对于流程控制语句，我真是觉得我用的太死了，可能一直以来，在我的脑袋里的想法就是，我把代码一行一行的敲下来，我多动手，我勤奋，可是那也只是我懒得动脑而已，那我真真是想成为一个码农吧，那我又何需走上编程这条路呢，一个懒得动脑的人。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如下图所示：&lt;/p&gt;
-&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;
     
     </summary>
     
@@ -104,6 +102,33 @@
   </entry>
   
   <entry>
+    <title>Android Note - 多个EditText的判空操作</title>
+    <link href="http://yoursite.com/2016/10/02/Android-Note-%E5%A4%9A%E4%B8%AAEditText%E7%9A%84%E5%88%A4%E7%A9%BA%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2016/10/02/Android-Note-多个EditText的判空操作/</id>
+    <published>2016-10-02T08:14:02.000Z</published>
+    <updated>2016-11-15T12:03:12.889Z</updated>
+    
+    <content type="html">&lt;p&gt;如下图所示：&lt;/p&gt;
+&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                           ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 		&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;           &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样的代码看起来就清晰了不少，学习java的时候，对于流程控制语句，我真是觉得我用的太死了，可能一直以来，在我的脑袋里的想法就是，我把代码一行一行的敲下来，我多动手，我勤奋，可是那也只是我懒得动脑而已，那我真真是想成为一个码农吧，那我又何需走上编程这条路呢，一个懒得动脑的人。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如下图所示：&lt;/p&gt;
+&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Android Note - MIUI 8打开相册闪退</title>
     <link href="http://yoursite.com/2016/08/29/Android%20Note-MIUI%208%E6%89%93%E5%BC%80%E7%9B%B8%E5%86%8C%E9%97%AA%E9%80%80/"/>
     <id>http://yoursite.com/2016/08/29/Android Note-MIUI 8打开相册闪退/</id>
@@ -124,27 +149,6 @@
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android Note - StickListHeaders的使用</title>
-    <link href="http://yoursite.com/2016/08/18/tags-/"/>
-    <id>http://yoursite.com/2016/08/18/tags-/</id>
-    <published>2016-08-18T11:24:39.000Z</published>
-    <updated>2016-08-18T11:53:43.725Z</updated>
-    
-    <content type="html">&lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地址&lt;/a&gt;，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&lt;/p&gt;
-&lt;p&gt;在我解决问题的过程中，我发现了一篇&lt;a href=&quot;http://blog.csdn.net/tongcpp/article/details/40372521&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文章&lt;/a&gt;，，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&lt;/p&gt;
-&lt;p&gt;其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地
-    
-    </summary>
-    
     
   </entry>
   
@@ -172,6 +176,27 @@
     
       &lt;p&gt;有这样一个方法：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android Note - StickListHeaders的使用</title>
+    <link href="http://yoursite.com/2016/08/18/tags-/"/>
+    <id>http://yoursite.com/2016/08/18/tags-/</id>
+    <published>2016-08-18T11:24:39.000Z</published>
+    <updated>2016-08-18T11:53:43.725Z</updated>
+    
+    <content type="html">&lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地址&lt;/a&gt;，通过它实现了头悬停效果，后来项目需要加入下拉刷新和上拉加载，我遇到了冲突，我尝试了很多在GitHub上排名靠前的下拉刷新开源项目，自己也试着去解决出现的滑动冲突，但是最后没有解决这个问题，后来的处理就是去掉了头悬停效果，直接改用ExpanableListView来代替。&lt;/p&gt;
+&lt;p&gt;在我解决问题的过程中，我发现了一篇&lt;a href=&quot;http://blog.csdn.net/tongcpp/article/details/40372521&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文章&lt;/a&gt;，，解答了我之前很多的疑惑，在此记录下来，非常感谢作者。文中提到了StickyListHeaders继承自FrameLayout，而不是我想当然的ListView，ExpanableListView。而这对于一些下拉刷新的开源项目所适用的场景是不同的，所有就会有冲突产生。&lt;/p&gt;
+&lt;p&gt;其实这个问题是我一个月前遇到的，刚才重新看了下，StickyListHeaders这个开源项目，README.md文档有很多变化，增加了很多内容，所以我这些经验现在来讲未必是准确的。那我所意识到的就是过往你所经历的不好的体验对于现在的你未必是有帮助的，它可能会成为你的限制，你会想当然的排斥掉它。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近项目中为了实现下拉头悬停，使用了一个开源项目，StickeyListHeaders&lt;a href=&quot;http://github.com/emilsjolander/StickyListHeaders&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地
     
     </summary>
     
