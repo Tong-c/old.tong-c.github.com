@@ -41,6 +41,33 @@
   </entry>
   
   <entry>
+    <title>浅谈计算机组成</title>
+    <link href="http://yoursite.com/2017/02/26/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
+    <id>http://yoursite.com/2017/02/26/浅谈计算机组成/</id>
+    <published>2017-02-26T08:22:09.000Z</published>
+    <updated>2017-11-12T01:03:42.555Z</updated>
+    
+    <content type="html">&lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。&lt;/p&gt;
+&lt;h3 id=&quot;计算机的基本组成&quot;&gt;&lt;a href=&quot;#计算机的基本组成&quot; class=&quot;headerlink&quot; title=&quot;计算机的基本组成&quot;&gt;&lt;/a&gt;计算机的基本组成&lt;/h3&gt;&lt;p&gt;一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设备（鼠标，键盘）。&lt;/p&gt;
+&lt;p&gt;当然这五个部分绝不是孤立的，它们是有联系的，我们都知道鼠标和键盘得插到USB口里面。如果你拆开电脑主机，你会看到一些插槽，一些密密麻麻的电路，而就是物理的联系，才得以传递我们的数据。我们输入数据，我们在word里面打字，电脑会输出数据，我们在显示器上就可以看到我们的输入。但这是一个怎样的联系呢？&lt;/p&gt;
+&lt;p&gt;CPU通过IO桥与内存建立联系，而IO桥又与IO总线连在一块，IO总线上连接的东西就很多了，它上面有我们的输入设备（鼠标，键盘），也有输出设备（显示器），还有存储器（硬盘），而这就是它们的联系，有了这样的联系，就可以传递数据，处理数据。&lt;/p&gt;
+&lt;h3 id=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;a href=&quot;#计算机可以做些什么事呢，它又是怎样做的呢？&quot; class=&quot;headerlink&quot; title=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;/a&gt;计算机可以做些什么事呢，它又是怎样做的呢？&lt;/h3&gt;&lt;p&gt;可以做些什么事呢，想一想我们与电脑相处的每一天，我们聊天（qq，微信），听歌（酷狗），浏览网页（搜狗浏览器），处理文档（word）等，有没有发现，电脑可以做很多事情，但全都基于软件。可软件又是什么呢，你可能立刻想到那一行行的代码，没错，就是它们，可这一行行的代码又如何成为我们所谓的软件呢？&lt;/p&gt;
+&lt;p&gt;首先明确一点，计算机只认识0和1，2都不认识，其它的数字、字母、图片、音乐，它都不认识。&lt;/p&gt;
+&lt;p&gt;程序员写好的一行行代码，就是源代码，计算机是不认识的，它不懂的。需要经过编译器，把这些源代码变成本地代码，本地代码是什么呢，就是安装包，就是那些以.exe作为后缀的文件，而这时候计算机就认得它了。&lt;/p&gt;
+&lt;p&gt;安装包现在就在你的硬盘里，你双击打开它，这些本地代码就会经过IO总线，IO桥到达内存里面，可这又是由谁控制的呢，别忘了操作系统，然后程序开始运行，在这个过程里面，数据和指令就经由操作系统被CPU处理，然后再得以输出。&lt;/p&gt;
+&lt;p&gt;才觉得脑袋里的东西很不系统，只是一些自己很零散的认知了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>条件控制的执行原理</title>
     <link href="http://yoursite.com/2017/02/26/%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
     <id>http://yoursite.com/2017/02/26/条件控制的执行原理/</id>
@@ -66,26 +93,26 @@
   </entry>
   
   <entry>
-    <title>浅谈计算机组成</title>
-    <link href="http://yoursite.com/2017/02/26/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
-    <id>http://yoursite.com/2017/02/26/浅谈计算机组成/</id>
-    <published>2017-02-26T08:22:09.000Z</published>
-    <updated>2017-11-12T01:03:42.555Z</updated>
+    <title>Android Note - 多个EditText的判空操作</title>
+    <link href="http://yoursite.com/2016/10/02/Android-Note-%E5%A4%9A%E4%B8%AAEditText%E7%9A%84%E5%88%A4%E7%A9%BA%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2016/10/02/Android-Note-多个EditText的判空操作/</id>
+    <published>2016-10-02T08:14:02.000Z</published>
+    <updated>2016-11-15T12:03:12.889Z</updated>
     
-    <content type="html">&lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很浅显的认知。&lt;/p&gt;
-&lt;h3 id=&quot;计算机的基本组成&quot;&gt;&lt;a href=&quot;#计算机的基本组成&quot; class=&quot;headerlink&quot; title=&quot;计算机的基本组成&quot;&gt;&lt;/a&gt;计算机的基本组成&lt;/h3&gt;&lt;p&gt;一个计算机的基础组成，CPU（运算器，控制器），存储器（内存，硬盘），输出设备（显示器），输入设备（鼠标，键盘）。&lt;/p&gt;
-&lt;p&gt;当然这五个部分绝不是孤立的，它们是有联系的，我们都知道鼠标和键盘得插到USB口里面。如果你拆开电脑主机，你会看到一些插槽，一些密密麻麻的电路，而就是物理的联系，才得以传递我们的数据。我们输入数据，我们在word里面打字，电脑会输出数据，我们在显示器上就可以看到我们的输入。但这是一个怎样的联系呢？&lt;/p&gt;
-&lt;p&gt;CPU通过IO桥与内存建立联系，而IO桥又与IO总线连在一块，IO总线上连接的东西就很多了，它上面有我们的输入设备（鼠标，键盘），也有输出设备（显示器），还有存储器（硬盘），而这就是它们的联系，有了这样的联系，就可以传递数据，处理数据。&lt;/p&gt;
-&lt;h3 id=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;a href=&quot;#计算机可以做些什么事呢，它又是怎样做的呢？&quot; class=&quot;headerlink&quot; title=&quot;计算机可以做些什么事呢，它又是怎样做的呢？&quot;&gt;&lt;/a&gt;计算机可以做些什么事呢，它又是怎样做的呢？&lt;/h3&gt;&lt;p&gt;可以做些什么事呢，想一想我们与电脑相处的每一天，我们聊天（qq，微信），听歌（酷狗），浏览网页（搜狗浏览器），处理文档（word）等，有没有发现，电脑可以做很多事情，但全都基于软件。可软件又是什么呢，你可能立刻想到那一行行的代码，没错，就是它们，可这一行行的代码又如何成为我们所谓的软件呢？&lt;/p&gt;
-&lt;p&gt;首先明确一点，计算机只认识0和1，2都不认识，其它的数字、字母、图片、音乐，它都不认识。&lt;/p&gt;
-&lt;p&gt;程序员写好的一行行代码，就是源代码，计算机是不认识的，它不懂的。需要经过编译器，把这些源代码变成本地代码，本地代码是什么呢，就是安装包，就是那些以.exe作为后缀的文件，而这时候计算机就认得它了。&lt;/p&gt;
-&lt;p&gt;安装包现在就在你的硬盘里，你双击打开它，这些本地代码就会经过IO总线，IO桥到达内存里面，可这又是由谁控制的呢，别忘了操作系统，然后程序开始运行，在这个过程里面，数据和指令就经由操作系统被CPU处理，然后再得以输出。&lt;/p&gt;
-&lt;p&gt;才觉得脑袋里的东西很不系统，只是一些自己很零散的认知了。&lt;/p&gt;
+    <content type="html">&lt;p&gt;如下图所示：&lt;/p&gt;
+&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                           ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 		&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;           &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样的代码看起来就清晰了不少，学习java的时候，对于流程控制语句，我真是觉得我用的太死了，可能一直以来，在我的脑袋里的想法就是，我把代码一行一行的敲下来，我多动手，我勤奋，可是那也只是我懒得动脑而已，那我真真是想成为一个码农吧，那我又何需走上编程这条路呢，一个懒得动脑的人。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很
+      &lt;p&gt;如下图所示：&lt;/p&gt;
+&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
     
     </summary>
     
@@ -120,33 +147,6 @@
     
       &lt;p&gt;在servlet中，获取GET请求携带的参数有两种方法。&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Android Note - 多个EditText的判空操作</title>
-    <link href="http://yoursite.com/2016/10/02/Android-Note-%E5%A4%9A%E4%B8%AAEditText%E7%9A%84%E5%88%A4%E7%A9%BA%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2016/10/02/Android-Note-多个EditText的判空操作/</id>
-    <published>2016-10-02T08:14:02.000Z</published>
-    <updated>2016-11-15T12:03:12.889Z</updated>
-    
-    <content type="html">&lt;p&gt;如下图所示：&lt;/p&gt;
-&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击下一步时，要进行EditText的非空判断，如果为空弹吐司给予提示，我最初的代码是这样的，&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                           ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                       ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                   ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 		&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;对于图中的五个EditText连续判断下来，代码实在是不能看，后来看到了同事的一种判断方法，简单了不少。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;           &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入法人姓名&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(card)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入身份证号&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (TextUtils.isEmpty(permission_name)) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                ToastUtils.showToast(&lt;span class=&quot;string&quot;&gt;&quot;请输入营业执照号码&quot;&lt;/span&gt;, ImportantActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//跳转下一个页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这样的代码看起来就清晰了不少，学习java的时候，对于流程控制语句，我真是觉得我用的太死了，可能一直以来，在我的脑袋里的想法就是，我把代码一行一行的敲下来，我多动手，我勤奋，可是那也只是我懒得动脑而已，那我真真是想成为一个码农吧，那我又何需走上编程这条路呢，一个懒得动脑的人。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如下图所示：&lt;/p&gt;
-&lt;p&gt;​     &lt;img src=&quot;https://github.com/Tong-c/tong-c.github.com/blob/master/img/sp20161002_162759.png?raw=true&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;
     
     </summary>
     
