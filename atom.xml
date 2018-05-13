@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-05T08:40:19.193Z</updated>
+  <updated>2018-05-13T06:05:58.319Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>条件控制的执行原理</title>
+    <link href="http://yoursite.com/2018/05/13/%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2018/05/13/条件控制的执行原理/</id>
+    <published>2018-05-13T06:05:07.000Z</published>
+    <updated>2018-05-13T06:05:58.319Z</updated>
+    
+    <content type="html">&lt;p&gt;条件执行具体是怎么实现的呢？程序最终都是一条条的指令，CPU有一个指令指示器，指向下一条要执行的指令，CPU根据指示器的指示加载指令并且执行。指令大部分会自动指向挨着的下一条指令。&lt;br&gt;&lt;br&gt;但有一些特殊的指令，称为&lt;strong&gt;跳转指令&lt;/strong&gt;，这些指令会修改指令指示器的值，让CPU跳到一个指定的的地方执行。跳转有两种：一种是条件跳转；另一种是无条件跳转。条件跳转检查某个条件，满足则进行跳转，无条件跳转则是直接进行跳转。&lt;br&gt;&lt;br&gt;if/else实际上会转换为这些跳转指令，比如下面的代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if(a%2==0)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;转换到的转移指令可能是：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;条件跳转：如果a%2==0,跳转到第4行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;无条件跳转：跳转到第7行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;你可能会奇怪第三行的无条件跳转指令，没有它不行吗？不行，没有这条指令，它会顺序执行接下来的指令，导致不管什么条件，括号中的代码都会执行。不过，对应的跳转指令也可能是：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;条件跳转：如果a%2!=0,跳转到第6行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里就没有无条件跳转指令，具体怎么对应和编译器实现有关。在单一if的情况下可能不用无条件跳转指令，但稍微复杂一些的情况都需要。if,if/else,if/else if/else、三元运算符都会转换为条件跳转和无条件跳转,但swith不太一样。&lt;br&gt;&lt;br&gt;switch的转换和具体系统实现有关。如果分支比较少,可能会转换为跳转指令。如果分支比较多，使用条件跳转会进行很多次的比较运算，效率比较低，可能会使用一种更为高效的方式，叫&lt;strong&gt;跳转表&lt;/strong&gt;。跳转表是一个映射表，存储了可能的值以及要跳转到的地址，如表1-5所示。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;表 1-5 跳转表&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;条件值&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;跳转地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;值1&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;代码块1的地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;值2&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;代码块2的地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;…&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;…&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;值n&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;代码块n的地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;跳转表为什么会更为高效呢？因为其中的值必须为整数，且按大小顺序排序。按大小排序的整数可以使用高效的二分查找，即先与中间的值比，如果小于中间的值，则在开始和中间值之间找，否则在中间值和末尾值之间找，每找一次缩小一半查找范围。如果值是连续的，则跳转表还会进行特殊优化，优化为一个数组，连找都不用找了，值就是数组的下表索引，直接根据值就可以找到跳转的地址。即使值不是连续的，但数字比较密集，差的不多，编译器也可能会优化为一个数组型的跳转表，没有的值指向default分支。&lt;br&gt;&lt;br&gt;程序源代码中的case值排列不要求是排序的，编译器会自动排序。之前说swith值的类型可以是byte、short、int、char、枚举和String。其中byte/short/int本来就是整数，char本质上也是整数,而枚举类型也有对应的整数,String用于switch时也会转换为整数。不可以使用long,为什么呢？跳转表值的存储空间一般为32位，容纳不下long。简单说明下String，String是通过hashCode()方法转换为整数的，但不同String的hashCode可能相同，跳转後会再次根据String的内容进行比较判断。&lt;br&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;条件执行具体是怎么实现的呢？程序最终都是一条条的指令，CPU有一个指令指示器，指向下一条要执行的指令，CPU根据指示器的指示加载指令并且执行。指令大部分会自动指向挨着的下一条指令。&lt;br&gt;&lt;br&gt;但有一些特殊的指令，称为&lt;strong&gt;跳转指令&lt;/strong&gt;，这些指令会
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>hibernate 3-HQL查询概述</title>
@@ -61,31 +114,6 @@
     <summary type="html">
     
       &lt;p&gt;昨天把《程序是怎样跑起来》看完了，之前也有看过《编码》，对于没有计算机基础的我来说呢，确实是了解到很多东西，也知道基础并非一日之功，只是看了两本书而已，况且我也没有做很深入的研究，中间也是有很多东西不理解，所以要学习的东西还有太多，而下面这些文字也是我对计算机组成的 一个很
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>条件控制的执行原理</title>
-    <link href="http://yoursite.com/2017/02/26/%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2017/02/26/条件控制的执行原理/</id>
-    <published>2017-02-26T08:22:09.000Z</published>
-    <updated>2018-05-13T05:36:59.093Z</updated>
-    
-    <content type="html">&lt;p&gt;条件执行具体是怎么实现的呢？程序最终都是一条条的指令，CPU有一个指令指示器，指向下一条要执行的指令，CPU根据指示器的指示加载指令并且执行。指令大部分会自动指向挨着的下一条指令。&lt;br&gt;&lt;br&gt;但有一些特殊的指令，称为&lt;strong&gt;跳转指令&lt;/strong&gt;，这些指令会修改指令指示器的值，让CPU跳到一个指定的的地方执行。跳转有两种：一种是条件跳转；另一种是无条件跳转。条件跳转检查某个条件，满足则进行跳转，无条件跳转则是直接进行跳转。&lt;br&gt;&lt;br&gt;if/else实际上会转换为这些跳转指令，比如下面的代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if(a%2==0)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;转换到的转移指令可能是：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;条件跳转：如果a%2==0,跳转到第4行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;无条件跳转：跳转到第7行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;你可能会奇怪第三行的无条件跳转指令，没有它不行吗？不行，没有这条指令，它会顺序执行接下来的指令，导致不管什么条件，括号中的代码都会执行。不过，对应的跳转指令也可能是：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;int a = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;条件跳转：如果a%2!=0,跳转到第6行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&amp;quot;偶数&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//其他代码&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这里就没有无条件跳转指令，具体怎么对应和编译器实现有关。在单一if的情况下可能不用无条件跳转指令，但稍微复杂一些的情况都需要。if,if/else,if/else if/else、三元运算符都会转换为条件跳转和无条件跳转,但swith不太一样。&lt;br&gt;&lt;br&gt;switch的转换和具体系统实现有关。如果分支比较少,可能会转换为跳转指令。如果分支比较多，使用条件跳转会进行很多次的比较运算，效率比较低，可能会使用一种更为高效的方式，叫&lt;strong&gt;跳转表&lt;/strong&gt;。跳转表是一个映射表，存储了可能的值以及要跳转到的地址，如表1-5所示。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;表 1-5 跳转表&lt;/strong&gt;&lt;br&gt;&lt;br&gt;| 条件值 |      跳转地址 |&lt;br&gt;| :—– | ————: |&lt;br&gt;| 值1    | 代码块1的地址 |&lt;br&gt;| 值2    | 代码块2的地址 |&lt;br&gt;| …    |           … |&lt;br&gt;| 值n    | 代码块n的地址 |&lt;/p&gt;
-&lt;p&gt;跳转表为什么会更为高效呢？因为其中的值必须为整数，且按大小顺序排序。按大小排序的整数可以使用高效的二分查找，即先与中间的值比，如果小于中间的值，则在开始和中间值之间找，否则在中间值和末尾值之间找，每找一次缩小一半查找范围。如果值是连续的，则跳转表还会进行特殊优化，优化为一个数组，连找都不用找了，值就是数组的下表索引，直接根据值就可以找到跳转的地址。即使值不是连续的，但数字比较密集，差的不多，编译器也可能会优化为一个数组型的跳转表，没有的值指向default分支。&lt;br&gt;&lt;br&gt;程序源代码中的case值排列不要求是排序的，编译器会自动排序。之前说swith值的类型可以是byte、short、int、char、枚举和String。其中byte/short/int本来就是整数，char本质上也是整数,而枚举类型也有对应的整数,String用于switch时也会转换为整数。不可以使用long,为什么呢？跳转表值的存储空间一般为32位，容纳不下long。简单说明下String，String是通过hashCode()方法转换为整数的，但不同String的hashCode可能相同，跳转後会再次根据String的内容进行比较判断。&lt;br&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;条件执行具体是怎么实现的呢？程序最终都是一条条的指令，CPU有一个指令指示器，指向下一条要执行的指令，CPU根据指示器的指示加载指令并且执行。指令大部分会自动指向挨着的下一条指令。&lt;br&gt;&lt;br&gt;但有一些特殊的指令，称为&lt;strong&gt;跳转指令&lt;/strong&gt;，这些指令会
     
     </summary>
     
